@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+    <style>
+    body {
+  background-color: #ffffff;
+}
+h1 {
+  color: black;
+  text-align: center;
+  font-family: Geneva;
+  font-size: 90px;
+  background-color: #ccddff;
+  border-style: none;
+  border-height: px;
+  border-width: 0px;
+  margin: 0px;
+}
+hr { 
+   display: block;
+    margin-before: 0.5em;
+    margin-after: 0.5em;
+    margin-start: auto;
+    margin-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+.btn-group button {
+ background-color: #E0E0E0; 
+  border: 3px #bfbfbf; /* Green border */
+  border-style: solid;
+  font-family: Candara;
+  font-size: 18x;
+  font-weight: normal;
+  color: black; 
+  padding: 30px 2px; /* Some padding */
+  margin: 25px;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  border-radius: 12px;}
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #808080;
+}
+h2 {
+  font-family: Lucida Bright;
+  text-align: left;
+  text-decoration: ;
+.center {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+h3 {
+  font-family: Lucida Bright;
+  text-align: center;
+  text-decoration: underline;
+}
+footer {
+  display: block;
+}
+hr { 
+    display: block;
+    margin-before: 100em;
+    margin-after: 100em;
+    margin-start: 0px;
+    margin-end: 0px;
+    overflow: none;
+    border-style: solid;
+    border-width: 10px;
+    width: 60%;
+    height: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+ h6 {
+   font-family: 1px; 
+   color: white;
+  }
+</style>
+<head>
+  <meta charset="utf-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <title>My Stacked Bar Chart</title>
+  </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<h1>Long Beach ESL Database </h1>
+<div class="btn-group">
+  <button> HOME </button>
+  <button>POLY HIGH SCHOOL</button>
+  <button>MILIKAN HIGH SCHOOL</button>
+  <button>LAKEWOOD HIGH SCHOOL</button>
+  <button>WILSON HIGH SCHOOL</button>
+  <button>CABRILLO HIGH SCHOOL </button>
+  <button>JORDAN HIGH SCHOOL</button>
+  <button>FAQS</button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<h2> Wilson High School </h2>
+<p>Contact Information:</p>
+<address>
+4400 E 10th St<br>
+Long Beach, CA 90804 <br>
+United States <br>
+Phone: +1 (562) 425-1281 <br>
+</address>
+<h2> Wilson High School English Learners </h2>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
+      
+<script>
+            window.onload = function () {
+            
+            var chart = new CanvasJS.Chart("chartContainer", {
+              animationEnabled: true,
+              theme: "light2",
+              title:{
+                text: "English Learners"
+              },
+              axisY:{
+                includeZero: true
+              },
+              data: [{        
+                type: "line",       
+                dataPoints: [
+                  { y: 519 , label: "2013-14"} ,
+                  { y: 516 , label: "2014-15" } ,
+                  { y: 473 ,label: "2015-16" } ,
+                  { y: 402 ,label: "2016-17" } ,
+                  { y: 421 ,label: "2017-18" },
+                ]
+              }]
+            });
+            chart.render();
+            
+            }
+            </script> 
+           <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ 
+<p>This graph displays the count of students at Wilson High School who were classified as English learners when enrollment counts were taken. Note: In 2010-11, some 413 districts and independently reporting charters did not certify their EL data, resulting in an undercount of about 405,018 EL students statewide. In most cases, if a dip is seen in 2010-11, it is due to missing data, not a decrease in English learners.  </p>
+<br>
+  
+  <h2> Wilson High School CAASPP English Language Arts/Literacy Results </h2>
+            
+ <canvas id="1Chart"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script>
+            var ctx = document.getElementById('1Chart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+            labels: ['2016-2017'],
+            axisY: {
+                title: "Percent of Students"
+            },
+            datasets: [
+            {
+                label: 'Not Met Level 1',
+                data: [15.26],
+                backgroundColor: '#3498DB' // blue,
+            },
+            {
+                label: 'Nearly Met Level 2',
+                data: [25.03],
+                backgroundColor: '#D6E9C6' // green,
+            },
+            {
+                label: 'Met Level 3',
+                data: [33.85],
+                backgroundColor: '#FAEBCC' // yellow
+            },
+            {
+                label: 'Exceeded Level 4',
+                data: [25.86],
+                backgroundColor: '#EBCCD1' // red
+            }
+                ]
+            },
+            options: {
+                scales: {
+                    xAxes: [{ stacked: true }],
+                    yAxes: [{ stacked: true }]
+                }
+            }
+            });
+        </script>
+        
+</div>
+
+ <canvas id="2Chart"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script>
+            var ctx = document.getElementById('2Chart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+            labels: ['2017-2018'],
+            axisY: {
+                title: "Percent of Students"
+            },
+            datasets: [
+            {
+                label: 'Not Met Level 1',
+                data: [37.16],
+                backgroundColor: '#3498DB' // blue,
+            },
+            {
+                label: 'Nearly Met Level 2',
+                data: [32.79],
+                backgroundColor: '#D6E9C6' // green,
+            },
+            {
+                label: 'Met Level 3',
+                data: [23.68],
+                backgroundColor: '#FAEBCC' // yellow
+            },
+            {
+                label: 'Exceeded Level 4',
+                data: [6.38],
+                backgroundColor: '#EBCCD1' // red
+            }
+                ]
+            },
+            options: {
+                scales: {
+                    xAxes: [{ stacked: true }],
+                    yAxes: [{ stacked: true }]
+                }
+            }
+            });
+        </script>
+  </div>
+  </body>
+  </html>

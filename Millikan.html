@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+        <style>
+
+                body {
+                  background-color: #ffffff;
+                }
+                p {
+                  font-family: Lucida Bright;
+                  font-size: 15px;
+                  text-height: 1.6;
+                  text-align: center;
+                }
+                h1 {
+                  color: black;
+                  text-align: center;
+                  font-family: Geneva;
+                  font-size: 90px;
+                  background-color: #ccddff;
+                  border-style: none;
+                  border-height: px;
+                  border-width: 15px;
+                  margin: 0px;
+                }
+                .btn-group button {
+                 background-color: #E0E0E0; 
+                  border: 3px #bfbfbf; /* Green border */
+                  border-style: solid;
+                  font-family: Candara;
+                  font-size: 18x;
+                  font-weight: normal;
+                  color: black; 
+                  padding: 30px 2px; /* Some padding */
+                  margin: 25px;
+                  cursor: pointer; /* Pointer/hand icon */
+                  float: left; /* Float the buttons side by side */
+                  border-radius: 12px;}
+                }
+                
+                /* Clear floats (clearfix hack) */
+                .btn-group:after {
+                  content: "";
+                  clear: both;
+                  display: table;
+                }
+                .btn-group button:not(:last-child) {
+                  border-right: none; /* Prevent double borders */
+                }
+                
+                /* Add a background color on hover */
+                .btn-group button:hover {
+                  background-color: #808080;
+                }
+                h2 {
+                  font-family: Lucida Bright;
+                  text-align: left;
+                  text-decoration: ;
+                .center {
+                    display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  width: 50%;
+                }
+                h3 {
+                  font-family: Lucida Bright;
+                  text-align: center;
+                  text-decoration: underline;
+                }
+                p {
+                  font-family: Cambria;
+                  font-size: 15px;
+                  text-height: 1.6;
+                  text-align: center;
+                }
+                footer {
+                  display: block;
+                }
+                  hr { 
+                    display: block;
+                    margin-before: 100em;
+                    margin-after: 100em;
+                    margin-start: 0px;
+                    margin-end: 0px;
+                    overflow: none;
+                    border-style: solid;
+                    border-width: 10px;
+                    width: 60%;
+                    height: 100px;
+                    margin-top: 100px;
+                    margin-bottom: 100px;
+                }
+                 h6 {
+                   font-family: 1px; 
+                   color: white;
+                  }
+                
+                
+                
+                
+                </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Stacked Bar Chart</title>
+</html>
+<body>
+<h1>Long Beach ESL Database </h1>
+<div class="btn-group">
+  <button> HOME </button>
+  <button>POLY HIGH SCHOOL</button>
+  <button>MILIKAN HIGH SCHOOL</button>
+  <button>LAKEWOOD HIGH SCHOOL</button>
+  <button>WILSON HIGH SCHOOL</button>
+  <button>CABRILLO HIGH SCHOOL </button>
+  <button>JORDAN HIGH SCHOOL</button>
+  <button>FAQS</button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h6 style = "color: white; font-size: 5px;"> text </h6>
+<hr>
+<h2> Milikan High School </h2>
+<p style="text-align:left;">Contact Information:</p>
+<address>
+2800 Snowden Ave <br>
+Long Beach, CA 90815 <br>
+United States <br>
+Phone: +1 (562) 425-7441 <br>
+</address>
+<h2> Millikan High School English Learners </h2>
+   <canvas id="3Chart"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
+        
+<script>
+            window.onload = function () {
+            
+            var chart = new CanvasJS.Chart("chartContainer", {
+              animationEnabled: true,
+              theme: "light2",
+              title:{
+                text: "English Learners"
+              },
+              axisY:{
+                includeZero: true
+              },
+              data: [{        
+                type: "line",       
+                dataPoints: [
+                  { y: 427 , label: "2013-14"} ,
+                  { y: 316 , label: "2014-15" } ,
+                  { y: 263 ,label: "2015-16" } ,
+                  { y: 193 ,label: "2016-17" } ,
+                  { y: 181 ,label: "2017-18" },
+                ]
+              }]
+            });
+            chart.render();
+            
+            }
+            </script>
+          <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  
+<p>This graph displays the count of students at Millikan High School who were classified as English learners when enrollment counts were taken. Note: In 2010-11, some 413 districts and independently reporting charters did not certify their EL data, resulting in an undercount of about 405,018 EL students statewide. In most cases, if a dip is seen in 2010-11, it is due to missing data, not a decrease in English learners.  </p>
+<br>
+<br>
+<h2> Millikan High School CAASPP English Language Arts/Literacy Tests </h2>
+   <canvas id="1Chart"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script>
+            var ctx = document.getElementById('1Chart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+            labels: ['2016-2017'],
+            axisY: {
+                title: "Percent of Students"
+            },
+            datasets: [
+            {
+                label: 'Not Met Level 1',
+                data: [18.84],
+                backgroundColor: '#3498DB' // blue,
+            },
+            {
+                label: 'Nearly Met Level 2',
+                data: [20.2],
+                backgroundColor: '#D6E9C6' // green,
+            },
+            {
+                label: 'Met Level 3',
+                data: [32.22],
+                backgroundColor: '#FAEBCC' // yellow
+            },
+            {
+                label: 'Exceeded Level 4',
+                data: [28.75],
+                backgroundColor: '#EBCCD1' // red
+            }
+                ]
+            },
+            options: {
+                scales: {
+                    xAxes: [{ stacked: true }],
+                    yAxes: [{ stacked: true }]
+                }
+            }
+            });
+        </script>
+  </div>
+
+  <canvas id="myChart"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+            labels: ['2017-2018'],
+            axisY: {
+                title: "Percent of Students"
+            },
+            datasets: [
+            {
+                label: 'Not Met Level 1',
+                data: [23.19],
+                backgroundColor: '#3498DB' // blue,
+            },
+            {
+                label: 'Nearly Met Level 2',
+                data: [24.74],
+                backgroundColor: '#D6E9C6' // green,
+            },
+            {
+                label: 'Met Level 3',
+                data: [31.09],
+                backgroundColor: '#FAEBCC' // yellow
+            },
+            {
+                label: 'Exceeded Level 4',
+                data: [20.98],
+                backgroundColor: '#EBCCD1' // red
+            }
+                ]
+            },
+            options: {
+                scales: {
+                    xAxes: [{ stacked: true }],
+                    yAxes: [{ stacked: true }]
+                }
+            }
+            });
+        </script>
+<p style = font-family: Cambria;>This graph displays the distribution of CAASPP English language arts/literacy results by achievement level for all students at Millikan High School. X-axis refers to the year the data is from and the Y-axis correlates to the percent of Students. The statistical data displays a trend in recent test scores from the 2016-17 school year to the 2017-18 school year. These tests are known as Smarter Balanced tests, or performance tasks that allow students to show what they know. These Smarter Balanced tests are part of the California Assessment of Student Performance and Progress (CAASPP) System.</p>
+</body>
+</html>
